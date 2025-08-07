@@ -8,8 +8,8 @@ from collections import Counter
 from hex_color import *
 from setup_function import *
 
-# import testmate
-# d = testmate.connect()
+import testmate
+d = testmate.connect()
 
 
 # === Lấy XML và ảnh từ thiết bị ===
@@ -67,7 +67,7 @@ def annotate_image(xml_file, image_file, output_file=f'{output}/screen_annotated
             # Vẽ box, color_code
 
             cv2.rectangle(image, pt1, pt2, (0, 0, 0), 2)
-            cv2.putText(image, text + ": " + color_code, (pt1[0], pt1[1] - 10),
+            cv2.putText(image, text + ": " + bg_color + text_color, (pt1[0], pt1[1] - 10),
             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 225), 2)
 
 
